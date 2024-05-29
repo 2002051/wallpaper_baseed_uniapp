@@ -1,0 +1,1 @@
+<view class="classlayout"><custom-nav-bar wx:if="{{a}}" u-i="6ec65d56-0" bind:__l="__l" u-p="{{a}}"></custom-nav-bar><view class="classify"><theme-item wx:for="{{b}}" wx:for-item="item" u-i="{{item.a}}" bind:__l="__l"></theme-item></view></view>
