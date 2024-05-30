@@ -26,3 +26,17 @@ export function apigetClassify(data={}){
 		data:data
 	})
 }
+
+export function apigetClassifyList(data={}){
+	return request({
+		url:"wallList",
+		data:data,
+	})
+}
+
+export function apiSetupScore(data={}){
+	return request({
+		url:"setupScore",
+		data:data
+	})
+}

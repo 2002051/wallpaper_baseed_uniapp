@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const api_apis = require("../../api/apis.js");
 if (!Array) {
   const _easycom_custom_nav_bar2 = common_vendor.resolveComponent("custom-nav-bar");
   const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
@@ -22,46 +23,31 @@ const _sfc_main = {
     const bannerList = common_vendor.ref([]);
     const randomList = common_vendor.ref([]);
     const noticeList = common_vendor.ref([]);
+    const classifyList = common_vendor.ref([]);
     const getBanner = async function() {
-      let res = await common_vendor.index.request({
-        // 阻塞等待网络请求返回结果
-        url: "https://tea.qingnian8.com/api/bizhi/homeBanner",
-        header: {
-          "access-key": "ytw666"
-        }
-      });
-      if (res.data.errCode === 0) {
-        bannerList.value = res.data.data;
-      }
+      console.log("获取banner");
+      let res = await api_apis.apiGetBanner();
+      bannerList.value = res.data;
     };
     getBanner();
-    const getDay = async function() {
-      let res = await common_vendor.index.request({
-        url: "	https://tea.qingnian8.com/api/bizhi/randomWall",
-        header: {
-          "access-key": "ytw666"
-        }
-      });
-      randomList.value = res.data.data;
+    const getDayRandom = async function() {
+      let res = await api_apis.apigetDayRandom();
+      randomList.value = res.data;
     };
-    getDay();
+    getDayRandom();
     const getNotice = async function() {
-      let res = await common_vendor.index.request({
-        // 阻塞等待网络请求返回结果
-        url: "https://tea.qingnian8.com/api/bizhi/wallNewsList",
-        header: {
-          "access-key": "ytw666"
-        },
-        data: {
-          "id": "653507c6466d417a3718e94b"
-        }
+      let res = await api_apis.apigetNotice({
+        select: true
       });
-      if (res.data.errCode === 0) {
-        noticeList.value = res.data.data;
-      }
-      console.log("res", res);
+      console.log("res!", res);
+      noticeList.value = res.data;
     };
     getNotice();
+    const getClassify = async function() {
+      let res = await api_apis.apigetClassify({ select: true });
+      classifyList.value = res.data;
+    };
+    getClassify();
     function gotoPreview() {
       common_vendor.index.navigateTo({
         url: "/pages/preview/preview"
@@ -109,9 +95,13 @@ const _sfc_main = {
             c: item._id
           };
         }),
-        i: common_vendor.f(8, (item, k0, i0) => {
+        i: common_vendor.f(classifyList.value, (item, k0, i0) => {
           return {
-            a: "1cf27b2a-7-" + i0
+            a: item._id,
+            b: "1cf27b2a-7-" + i0,
+            c: common_vendor.p({
+              item
+            })
           };
         }),
         j: common_vendor.p({

@@ -137,6 +137,7 @@
   line-height: 1.7em;
 }
 .preview .infoPopup scroll-view .content .row .label {
+  white-space: nowrap;
   color: #a7a7a7;
   text-align: right;
   font-size: 30rpx;

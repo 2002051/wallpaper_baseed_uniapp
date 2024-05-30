@@ -34,5 +34,8 @@ swiper-item {
 	background:
 		linear-gradient(to bottom, transparent, #fff 400rpx),
 		linear-gradient(to right, #beecd8 20%, #F4E2D8);
-	    min-height: 10vh;
+	min-height: 10vh;
+}
+.loadingLayout {
+	padding: 30rpx 0;
 }page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

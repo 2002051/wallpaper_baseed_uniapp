@@ -1,14 +1,16 @@
 <template>
 	<!-- <button @click="doCli">测试按钮</button> -->
 	<view class="themeItem">
-		<navigator url="/pages/classlist/classlist" open-type="reLaunch" class="box" v-if="!isMore">
+		<navigator :url="`/pages/classlist/classlist?id=${item._id}&name=${item.name}`" class="box" v-if="!isMore">
+		<!-- <navigator url="/pages/classlist/classlist" open-type="reLaunch" class="box" v-if="!isMore"> -->
 			<image :src="item.picurl" mode="aspectFill" class="pic"></image>
 			<view class="mask">
 				{{item.name}}
 			</view>
 			<view class="tab">
 				
-				3天前更新
+				{{calculateTimeAgo(item.updateTime)}}前更新
+			
 			</view>
 		</navigator>
 
@@ -25,6 +27,8 @@
 </template>
 
 <script setup>
+	import {calculateTimeAgo} from "@/utils/get_time_gap.js"
+	
 	defineProps({
 		isMore: {
 			type: Boolean,

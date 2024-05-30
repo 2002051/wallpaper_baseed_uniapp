@@ -1,1 +1,1 @@
-<view class="classlist"><view class="content"><navigator wx:for="{{a}}" wx:for-item="item" url="/pages/preview/preview" class="item"><image src="{{b}}" mode="aspectFill"></image></navigator></view></view>
+<view class="classlist"><view class="loadingLayout"><uni-load-more wx:if="{{a}}" u-i="01f15378-0" bind:__l="__l" u-p="{{b}}"></uni-load-more></view><view class="content"><navigator wx:for="{{c}}" wx:for-item="item" wx:key="c" url="{{item.b}}" class="item"><image src="{{item.a}}" mode="aspectFill"></image></navigator></view></view>

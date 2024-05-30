@@ -10,5 +10,9 @@ swiper-item {
 	background:
 		linear-gradient(to bottom, transparent, #fff 400rpx),
 		linear-gradient(to right, #beecd8 20%, #F4E2D8);
-	    min-height: 10vh;
+	min-height: 10vh;
+}
+
+.loadingLayout {
+	padding: 30rpx 0;
 }

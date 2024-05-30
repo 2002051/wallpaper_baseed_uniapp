@@ -28,7 +28,7 @@
 			"path" : "pages/classlist/classlist",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "分类列表"
 			}
 		},
 		{
@@ -50,7 +50,7 @@
 			"path" : "pages/notice/noticedetail",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "公告详情"
 			}
 		}
 	],

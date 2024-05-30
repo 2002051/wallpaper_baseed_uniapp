@@ -9,7 +9,8 @@ export function request(config = {}) {
 		data = {},
 		header = {}
 	} = config
-	URL = BASE_URL + url
+	let URL = BASE_URL + url
+	console.log("URL",URL)
 	header['access-key'] = "ytw666"
 	return new Promise((resolve, reject) => {
 
